@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {User} from "./user/model/user-model";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+  public currentUser: User;
+
+  constructor() {
+    // console.log("什么也没有！");
+  }
+
+  ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  }
+
 }
