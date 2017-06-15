@@ -3,21 +3,26 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import {RouterModule} from "@angular/router";
 import {homeRoutes} from "./home.routes";
-import { OnlineContactComponent } from './online-contact/online-contact.component';
-import { SocialChannelComponent } from './social-channel/social-channel.component';
 import {SitestatComponent} from "../sitestat/sitestat.component";
+import { AuthorDescComponent } from './author-desc/author-desc.component';
+import {PostSharedModule} from "../shared/post-shared.module";
+import { AboutMeComponent } from './about-me/about-me.component';
+import { FriendsLinkComponent } from './friends-link/friends-link.component';
 
 @NgModule({
   imports: [
     CommonModule,
+    PostSharedModule,
     RouterModule.forChild(homeRoutes)
   ],
   declarations: [
     HomeComponent,
-    OnlineContactComponent,
-    SocialChannelComponent,
-    SitestatComponent
+    SitestatComponent,
+    AuthorDescComponent,
+    AboutMeComponent,
+    FriendsLinkComponent
   ],
-  providers: []
+  providers: [
+  ]
 })
 export class HomeModule { }

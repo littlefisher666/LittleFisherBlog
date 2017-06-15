@@ -11,6 +11,8 @@ import { PostListComponent } from './post-list/post-list.component';
   ],
   declarations: [
     PostListComponent
+  ],
+  exports: [
   ]
 })
 export class PostModule { }
