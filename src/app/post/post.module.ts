@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule} from "@angular/router";
 import {postRoutes} from "./post.routes";
-import {PostComponent} from "./post.component";
+import { PostListComponent } from './post-list/post-list.component';
 
 @NgModule({
   imports: [
@@ -10,7 +10,7 @@ import {PostComponent} from "./post.component";
     RouterModule.forChild(postRoutes)
   ],
   declarations: [
-    PostComponent
+    PostListComponent
   ]
 })
 export class PostModule { }

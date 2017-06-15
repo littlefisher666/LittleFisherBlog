@@ -1,8 +1,8 @@
 import {RouterModule} from "@angular/router";
-import {PostComponent} from "./post.component";
+import {PostListComponent} from "./post-list/post-list.component";
 export const postRoutes = [
   {
     path: '',
-    component: PostComponent
+    component: PostListComponent
   }
 ]
