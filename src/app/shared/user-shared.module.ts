@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {PostTagsComponent} from "../post/post-tags/post-tags.component";
+import {UserLoginComponent} from "../user/user-login/user-login.component";
+import {UserRegisterComponent} from "../user/user-register/user-register.component";
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-      PostTagsComponent
+    UserLoginComponent,
+    UserRegisterComponent
   ],
   exports: [
-      PostTagsComponent
+    UserLoginComponent,
+    UserRegisterComponent
   ]
 })
-export class PostSharedModule { }
+export class UserSharedModule { }

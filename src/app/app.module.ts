@@ -6,8 +6,11 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app.routes";
-import { UserComponent } from './user/user.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {UserSharedModule} from "./shared/user-shared.module";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {UserLoginComponent} from "./user/user-login/user-login.component";
+import {UserRegisterComponent} from "./user/user-register/user-register.component";
 
 @NgModule({
   imports: [
@@ -15,11 +18,16 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    UserSharedModule,
+    RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot()
   ],
   declarations: [
-    AppComponent,
-    UserComponent
+    AppComponent
+  ],
+  entryComponents: [
+    UserLoginComponent,
+    UserRegisterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

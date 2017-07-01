@@ -7,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthorDescComponent implements OnInit {
 
-  public currentDate: Date = new Date();
 
   constructor() {
-    window.setInterval(() => this.currentDate = new Date(), 1000);
   }
 
   ngOnInit() {

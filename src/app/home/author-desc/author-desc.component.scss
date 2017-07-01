@@ -1,0 +1,46 @@
+.author-img-a {
+  //border: 5px solid #fff;
+  //position: relative;
+  //overflow: hidden;
+  //width: 128px;
+  //height: 128px;
+  //border-radius: 300px;
+  text-align: center;
+  display: block;
+  border: 5px solid #bde1ef;
+  -webkit-border-radius: 300px;
+  border-radius: 300px;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: #88acdb;
+  -webkit-transition: all 0.2s ease-in;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  text-align: center;
+
+  .author-img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.author-name {
+  font-family: Roboto, "Roboto", serif;
+  font-size: 30px;
+  a {
+    text-decoration: none;
+    color: #696969;
+  }
+}
+.author-subtitle {
+  text-align: center;
+  color: #999;
+  font-size: 13px;
+  line-height: 25px;
+  //overflow: hidden;
+  //text-overflow: ellipsis;
+}
