@@ -11,6 +11,7 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {UserLoginComponent} from "./user/user-login/user-login.component";
 import {UserRegisterComponent} from "./user/user-register/user-register.component";
 import {CommonSharedModule} from "./shared/common-shared.module";
+import {DialogModule} from "primeng/primeng";
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {CommonSharedModule} from "./shared/common-shared.module";
     HttpModule,
     UserSharedModule,
     RouterModule.forRoot(appRoutes),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    DialogModule
   ],
   declarations: [
     AppComponent

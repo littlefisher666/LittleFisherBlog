@@ -11,6 +11,7 @@ import {UserRegisterComponent} from "./user/user-register/user-register.componen
 })
 export class AppComponent implements OnInit {
   public currentUser: User;
+  userLoginDisplay: boolean = false;
 
   constructor(
     private modalService: NgbModal
@@ -22,10 +23,11 @@ export class AppComponent implements OnInit {
   }
 
   openLoginView() {
-    const userLoginModalProp = {
-      size: 'lg' as any
-    };
-    this.modalService.open(UserLoginComponent, userLoginModalProp);
+    // const userLoginModalProp = {
+    //   size: 'lg' as any
+    // };
+    // this.modalService.open(UserLoginComponent, userLoginModalProp);
+    this.userLoginDisplay = true;
   }
 
   openRegisterView() {
