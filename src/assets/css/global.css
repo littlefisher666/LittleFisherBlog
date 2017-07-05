@@ -1,0 +1,14 @@
+.required > label:after {
+  content: "*";
+  color: red;
+  padding-left: 1.8px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.col-form-label-right {
+  padding-top: calc(0.5rem - 1px * 2);
+  padding-bottom: calc(0.5rem - 1px * 2);
+  margin-bottom: 0;
+  text-align: right;
+}

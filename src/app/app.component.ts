@@ -22,13 +22,17 @@ export class AppComponent implements OnInit {
   }
 
   openLoginView() {
-    const userLoginModelRef = this.modalService.open(UserLoginComponent);
-    userLoginModelRef.componentInstance.name = "World";
+    const userLoginModalProp = {
+      size: 'lg' as any
+    };
+    this.modalService.open(UserLoginComponent, userLoginModalProp);
   }
 
   openRegisterView() {
-    const userRegisterModelRef = this.modalService.open(UserRegisterComponent);
-    userRegisterModelRef.componentInstance.name = "World";
+    const userRegisterModalProp = {
+      size: 'lg' as any
+    };
+    this.modalService.open(UserRegisterComponent, userRegisterModalProp);
   }
 
 }

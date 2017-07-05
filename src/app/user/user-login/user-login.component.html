@@ -1,12 +1,33 @@
 <div class="modal-header">
-  <h4 class="modal-title">Hi there!</h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-    <span aria-hidden="true">&times;</span>
+  <h5 class="modal-title">登录</h5>
+  <button type="button" class="close" aria-label="Close" (click)="cancelLogin()">
+    <span class="fa fa-times" aria-hidden="true"></span>
   </button>
 </div>
 <div class="modal-body">
-  <p>Hello, {{name}}!</p>
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-secondary" (click)="activeModal.close('Close click')">Close</button>
+  <div class="container">
+    <form #userLoginForm (submit)="userLoginForm.form.valid && doLogin()" role="form">
+      <div class="form-group row required" [ngClass]="{'has-danger': userLoginForm.submitted && !accNbr.valid }">
+        <label class="col-2 col-form-label-right">用户名</label>
+        <div class="col-10">
+          <input required name="accNbr" class="form-control" [(ngModel)]="user.accNbr" #accNbr placeholder="请输入用户名"
+                 ngbPopover="用户名需要至少6位，由大写字母、小写字母、数字组成" triggers="mouseenter:mouseleave">
+          <small *ngIf="userLoginForm.submitted && !accNbr.valid" class="form-control-feedback">用户名必须输入</small>
+        </div>
+      </div>
+      <div class="form-group row required" [ngClass]="{'has-danger': userLoginForm.submitted && !password.valid }">
+        <label class="col-2 col-form-label-right">密码</label>
+        <div class="col-10">
+          <input required name="password" type="password" class="form-control" [(ngModel)]="user.password" #password placeholder="请输入密码">
+          <small *ngIf="userLoginForm.submitted && !password.valid" class="form-control-feedback">密码必须输入</small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="offset-2 col-10">
+          <button class="btn btn-primary">登录</button>
+          <button type="button" class="btn btn-secondary" (click)="cancelLogin()">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

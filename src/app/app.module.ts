@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -11,12 +10,13 @@ import {UserSharedModule} from "./shared/user-shared.module";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {UserLoginComponent} from "./user/user-login/user-login.component";
 import {UserRegisterComponent} from "./user/user-register/user-register.component";
+import {CommonSharedModule} from "./shared/common-shared.module";
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
+    CommonSharedModule,
     HttpModule,
     UserSharedModule,
     RouterModule.forRoot(appRoutes),

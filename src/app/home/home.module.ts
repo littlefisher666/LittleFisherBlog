@@ -8,10 +8,11 @@ import { AuthorDescComponent } from './author-desc/author-desc.component';
 import {PostSharedModule} from "../shared/post-shared.module";
 import { AboutMeComponent } from './about-me/about-me.component';
 import { FriendsLinkComponent } from './friends-link/friends-link.component';
+import {CommonSharedModule} from "../shared/common-shared.module";
 
 @NgModule({
   imports: [
-    CommonModule,
+    CommonSharedModule,
     PostSharedModule,
     RouterModule.forChild(homeRoutes)
   ],
