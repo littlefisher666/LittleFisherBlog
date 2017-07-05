@@ -1,33 +1,58 @@
-<div class="modal-header">
-  <h5 class="modal-title">登录</h5>
-  <button type="button" class="close" aria-label="Close" (click)="cancelLogin()">
-    <span class="fa fa-times" aria-hidden="true"></span>
-  </button>
-</div>
-<div class="modal-body">
-  <div class="container">
-    <form #userLoginForm (submit)="userLoginForm.form.valid && doLogin()" role="form">
-      <div class="form-group row required" [ngClass]="{'has-danger': userLoginForm.submitted && !accNbr.valid }">
-        <label class="col-2 col-form-label-right">用户名</label>
-        <div class="col-10">
-          <input required name="accNbr" class="form-control" [(ngModel)]="user.accNbr" #accNbr placeholder="请输入用户名"
-                 ngbPopover="用户名需要至少6位，由大写字母、小写字母、数字组成" triggers="mouseenter:mouseleave">
-          <small *ngIf="userLoginForm.submitted && !accNbr.valid" class="form-control-feedback">用户名必须输入</small>
-        </div>
-      </div>
-      <div class="form-group row required" [ngClass]="{'has-danger': userLoginForm.submitted && !password.valid }">
-        <label class="col-2 col-form-label-right">密码</label>
-        <div class="col-10">
-          <input required name="password" type="password" class="form-control" [(ngModel)]="user.password" #password placeholder="请输入密码">
-          <small *ngIf="userLoginForm.submitted && !password.valid" class="form-control-feedback">密码必须输入</small>
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="offset-2 col-10">
-          <button class="btn btn-primary">登录</button>
-          <button type="button" class="btn btn-secondary" (click)="cancelLogin()">取消</button>
-        </div>
-      </div>
-    </form>
-  </div>
+<!--<div class="container">-->
+  <!--<form #userLoginForm (submit)="userLoginForm.form.valid && doLogin()" role="form">-->
+    <!--<div class="form-group row required" [ngClass]="{'has-danger': userLoginForm.submitted && !accNbr.valid }">-->
+      <!--<label class="col-2 col-form-label-right">用户名</label>-->
+      <!--<div class="col-10">-->
+        <!--<input required name="accNbr" class="form-control" [(ngModel)]="user.accNbr" #accNbr placeholder="请输入用户名"-->
+               <!--ngbPopover="用户名需要至少6位，由大写字母、小写字母、数字组成" triggers="mouseenter:mouseleave">-->
+        <!--<small *ngIf="userLoginForm.submitted && !accNbr.valid" class="form-control-feedback">用户名必须输入</small>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group row required" [ngClass]="{'has-danger': userLoginForm.submitted && !password.valid }">-->
+      <!--<label class="col-2 col-form-label-right">密码</label>-->
+      <!--<div class="col-10">-->
+        <!--<input required name="password" type="password" class="form-control" [(ngModel)]="user.password" #password placeholder="请输入密码">-->
+        <!--<small *ngIf="userLoginForm.submitted && !password.valid" class="form-control-feedback">密码必须输入</small>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group row">-->
+      <!--<div class="offset-2 col-10">-->
+        <!--<button class="btn btn-primary">登录</button>-->
+        <!--<button type="button" class="btn btn-secondary" (click)="cancelLogin()">取消</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</form>-->
+<!--</div>-->
+
+<div class="container">
+  <form #loginForm>
+    <div layout="row">
+      <md-input-container flex>
+        <input mdInput name="acc-nbr" required #accNbr #accNbrControl="ngModel" [(ngModel)]="user.accNbr" placeholder="用户名" maxlength="30">
+        <md-hint align="start">
+          <span [hidden]="!accNbrControl.errors?.required || accNbrControl.pristine" class="tc-red-600">Required</span>
+        </md-hint>
+        <md-hint align="end">{{accNbr.value.length}} / 30</md-hint>
+      </md-input-container>
+    </div>
+    <div layout="row">
+      <md-input-container flex>
+        <input mdInput name="password" type="password" required #password #passwordControl="ngModel" [(ngModel)]="user.password" placeholder="密码" maxlength="40">
+        <md-hint align="start">
+          <span [hidden]="!passwordControl.errors?.required || passwordControl.pristine" class="tc-red-600">Required</span>
+        </md-hint>
+        <md-hint align="end">请不要使用过于简单的密码</md-hint>
+      </md-input-container>
+    </div>
+    <div layout="row">
+      <section class="remeber-me-checkbox">
+        <md-checkbox>记住我</md-checkbox>
+      </section>
+    </div>
+    <md-divider></md-divider>
+    <div layout="row" layout-margin>
+      <button md-raised-button color="primary" class="user-login-btn">登录</button>
+      <button md-raised-button class="user-login-btn">取消</button>
+    </div>
+  </form>
 </div>

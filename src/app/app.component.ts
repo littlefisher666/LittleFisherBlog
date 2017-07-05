@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {User} from "./user/model/user-model";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {UserLoginComponent} from "./user/user-login/user-login.component";
-import {UserRegisterComponent} from "./user/user-register/user-register.component";
+import {TdDialogService} from "@covalent/core";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +12,8 @@ export class AppComponent implements OnInit {
   public currentUser: User;
 
   constructor(
-    private modalService: NgbModal
+    private dialogService: TdDialogService,
+    private viewContainerRef: ViewContainerRef
   ) {
   }
 
@@ -22,17 +22,26 @@ export class AppComponent implements OnInit {
   }
 
   openLoginView() {
-    const userLoginModalProp = {
-      size: 'lg' as any
+    // const userLoginModalProp = {
+    //   size: 'lg' as any
+    // };
+    // this.modalService.open(UserLoginComponent, userLoginModalProp);
+    const userLoginDialogProp = {
+      disableClose: false,
+      viewContainerRef: this.viewContainerRef,
+      width: '400px',
+      position: {
+        top: '100px',
+      }
     };
-    this.modalService.open(UserLoginComponent, userLoginModalProp);
+    this.dialogService.open(UserLoginComponent, userLoginDialogProp);
   }
 
   openRegisterView() {
-    const userRegisterModalProp = {
-      size: 'lg' as any
-    };
-    this.modalService.open(UserRegisterComponent, userRegisterModalProp);
+    // const userRegisterModalProp = {
+    //   size: 'lg' as any
+    // };
+    // this.modalService.open(UserRegisterComponent, userRegisterModalProp);
   }
 
 }
