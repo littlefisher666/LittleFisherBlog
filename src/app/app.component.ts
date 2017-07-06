@@ -2,6 +2,7 @@ import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {User} from "./user/model/user-model";
 import {UserLoginComponent} from "./user/user-login/user-login.component";
 import {TdDialogService} from "@covalent/core";
+import {UserRegisterComponent} from "./user/user-register/user-register.component";
 
 @Component({
   selector: 'app-root',
@@ -22,10 +23,6 @@ export class AppComponent implements OnInit {
   }
 
   openLoginView() {
-    // const userLoginModalProp = {
-    //   size: 'lg' as any
-    // };
-    // this.modalService.open(UserLoginComponent, userLoginModalProp);
     const userLoginDialogProp = {
       disableClose: false,
       viewContainerRef: this.viewContainerRef,
@@ -38,10 +35,15 @@ export class AppComponent implements OnInit {
   }
 
   openRegisterView() {
-    // const userRegisterModalProp = {
-    //   size: 'lg' as any
-    // };
-    // this.modalService.open(UserRegisterComponent, userRegisterModalProp);
+    const userRegisterDialogProp = {
+      disableClose: false,
+      viewContainerRef: this.viewContainerRef,
+      width: '400px',
+      position: {
+        top: '100px'
+      }
+    }
+    this.dialogService.open(UserRegisterComponent, userRegisterDialogProp);
   }
 
 }

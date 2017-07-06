@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
+// import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 import {FormGroup} from "@angular/forms";
 
 @Component({
@@ -12,7 +12,7 @@ export class UserRegisterComponent implements OnInit {
   public userForm: FormGroup;
 
   constructor(
-    public activeModal: NgbActiveModal
+    // public activeModal: NgbActiveModal
   ) { }
 
   ngOnInit() {
@@ -20,11 +20,11 @@ export class UserRegisterComponent implements OnInit {
 
   doRegister() {
     console.log("doRegister");
-    this.activeModal.close();
+    // this.activeModal.close();
   }
 
   cancelRegister() {
-    this.activeModal.close();
+    // this.activeModal.close();
   }
 
 }
