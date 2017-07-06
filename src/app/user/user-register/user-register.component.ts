@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
-import {FormGroup} from "@angular/forms";
+import {User} from "../model/user-model";
+import {MdDialogRef} from "@angular/material";
 
 @Component({
   selector: 'app-user-register',
@@ -9,10 +9,10 @@ import {FormGroup} from "@angular/forms";
 })
 export class UserRegisterComponent implements OnInit {
 
-  public userForm: FormGroup;
+  public user: User = new User();
 
   constructor(
-    // public activeModal: NgbActiveModal
+    public activeDialogRef: MdDialogRef<UserRegisterComponent>
   ) { }
 
   ngOnInit() {
@@ -20,11 +20,10 @@ export class UserRegisterComponent implements OnInit {
 
   doRegister() {
     console.log("doRegister");
-    // this.activeModal.close();
   }
 
   cancelRegister() {
-    // this.activeModal.close();
+    this.activeDialogRef.close();
   }
 
 }

@@ -1,14 +1,14 @@
-.required > label:after {
-  content: "*";
-  color: red;
-  padding-left: 1.8px;
-  vertical-align: middle;
+.mat-input-container {
   display: inline-block;
+  position: relative;
+  text-align: left;
+  padding: 0 5px;
 }
-
-.col-form-label-right {
-  padding-top: calc(0.5rem - 1px * 2);
-  padding-bottom: calc(0.5rem - 1px * 2);
-  margin-bottom: 0;
-  text-align: right;
+.mat-dialog-content {
+  display: block;
+  margin: 0 -24px 10px -24px;
+  padding: 0 24px;
+  max-height: 65vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }

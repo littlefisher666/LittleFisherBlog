@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import {Http, HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
@@ -11,6 +11,12 @@ import {UserLoginComponent} from "./user/user-login/user-login.component";
 import {UserRegisterComponent} from "./user/user-register/user-register.component";
 import {CommonSharedModule} from "./shared/common-shared.module";
 import {CovalentDialogsModule} from "@covalent/core";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+
+export function HttpLoaderFactory(http:Http){
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   imports: [
@@ -20,8 +26,14 @@ import {CovalentDialogsModule} from "@covalent/core";
     HttpModule,
     UserSharedModule,
     RouterModule.forRoot(appRoutes),
-    // NgbModule.forRoot(),
     CovalentDialogsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide:TranslateLoader,
+        useFactory:HttpLoaderFactory,
+        deps:[Http]
+      }
+    })
   ],
   declarations: [
     AppComponent

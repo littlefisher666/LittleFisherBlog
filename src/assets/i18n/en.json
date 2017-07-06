@@ -1,0 +1,30 @@
+{
+  "user": {
+    "accNbr": "Account Number",
+    "easyPassword": "Please do not input too easy password!",
+    "nickName": "Nick Name",
+    "realName": "Real Name",
+    "enName": "English Name",
+    "qq": "QQ",
+    "email": "Email",
+    "wechat": "Wechat",
+    "userLogin": {
+      "login": "Login",
+      "remeberMe": "Remeber Me"
+    },
+    "userRegister": {
+      "register": "Register",
+      "confirmPassword": "Confirm Password",
+      "passwordAgain": "Please input password again!",
+      "emailError": "Please input correct email!",
+      "qqError": "Please input corrent QQ!",
+      "wechatError": "Please input corrent wechat!"
+    }
+  },
+  "common": {
+    "ok": "Ok",
+    "cancel": "Cancel",
+    "password": "Password",
+    "required": "Required"
+  }
+}

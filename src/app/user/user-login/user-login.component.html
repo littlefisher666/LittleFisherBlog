@@ -1,13 +1,14 @@
 <div class="container">
-  <h2 md-dialog-title>登录</h2>
+  <h2 md-dialog-title>{{'user.userLogin.login' | translate}}</h2>
   <md-dialog-content>
+    <!--由于提交button不在form中，所以使用(ngSubmit)无效-->
     <form #loginForm="ngForm">
       <div layout="row">
         <md-input-container flex>
           <input mdInput name="acc-nbr" required #accNbr #accNbrControl="ngModel"
-                 [(ngModel)]="user.accNbr" placeholder="用户名" maxlength="30">
+                 [(ngModel)]="user.accNbr" placeholder="{{'user.accNbr' | translate}}" maxlength="30">
           <md-hint align="start">
-            <span [hidden]="!accNbrControl.errors?.required || accNbrControl.pristine" class="tc-red-600">Required</span>
+            <span [hidden]="!accNbrControl.errors?.required || accNbrControl.pristine" class="tc-red-600">{{'common.required' | translate}}</span>
           </md-hint>
           <md-hint align="end">{{accNbr.value.length}} / 30</md-hint>
         </md-input-container>
@@ -15,22 +16,22 @@
       <div layout="row">
         <md-input-container flex>
           <input mdInput name="password" type="password" required #password #passwordControl="ngModel"
-                 [(ngModel)]="user.password" placeholder="密码" maxlength="40">
+                 [(ngModel)]="user.password" placeholder="{{'common.password' | translate}}" maxlength="40">
           <md-hint align="start">
-            <span [hidden]="!passwordControl.errors?.required || passwordControl.pristine" class="tc-red-600">Required</span>
+            <span [hidden]="!passwordControl.errors?.required || passwordControl.pristine" class="tc-red-600">{{'common.required' | translate}}</span>
           </md-hint>
-          <md-hint align="end">请不要使用过于简单的密码</md-hint>
+          <md-hint align="end">{{'user.easyPassword' | translate}}</md-hint>
         </md-input-container>
       </div>
       <div layout="row">
         <section class="remeber-me-checkbox">
-          <md-checkbox color="primary">记住我</md-checkbox>
+          <md-checkbox name="remeber-me" color="primary" [(ngModel)]="user.remeberMe">{{'user.userLogin.remeberMe' | translate}}</md-checkbox>
         </section>
       </div>
     </form>
   </md-dialog-content>
   <md-dialog-actions>
-    <button md-raised-button color="primary">登录</button>
-    <button md-raised-button>取消</button>
+    <button md-raised-button type="submit" color="primary" [disabled]="!loginForm.valid" (click)="doLogin()">{{'user.userLogin.login' | translate}}</button>
+    <button md-raised-button (click)="cancelLogin()">{{'common.cancel' | translate}}</button>
   </md-dialog-actions>
 </div>

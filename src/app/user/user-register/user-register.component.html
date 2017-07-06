@@ -1,70 +1,71 @@
-<div class="modal-header">
-  <h4 class="modal-title">注册</h4>
-  <button type="button" class="close" aria-label="Close" (click)="cancelRegister()">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="modal-body">
-  <form (submit)="doRegister()" role="form">
-    <div class="form-group row">
-      <label class="col-2 col-form-label" for="input-user-name">用户名</label>
-      <div class="col-10">
-        <input class="form-control" id="input-user-name" placeholder="请输入用户名">
+<div class="container">
+  <h2 md-dialog-title>{{'user.userRegister.register' | translate}}</h2>
+  <md-dialog-content>
+    <form #registerForm>
+      <div layout="row">
+        <md-input-container flex>
+          <input mdInput name="acc-nbr" required #accNbr #accNbrControl="ngModel" [(ngModel)]="user.accNbr" placeholder="{{'user.accNbr' | translate}}" maxlength="30">
+          <md-hint align="start">
+            <span [hidden]="!accNbrControl.errors?.required || accNbrControl.pristine" class="tc-red-300">{{'common.required' | translate}}</span>
+          </md-hint>
+          <md-hint align="end">{{accNbr.value.length}} / 30</md-hint>
+        </md-input-container>
       </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label" for="input-password">密码</label>
-      <div class="col-10">
-        <input type="password" class="form-control" id="input-password" placeholder="请输入密码">
+      <div layout="row">
+        <md-input-container flex>
+          <input mdInput type="password" name="password" required #password #passwordControl="ngModel" [(ngModel)]="user.password" placeholder="{{'common.password' | translate}}">
+          <md-hint align="start">
+            <span [hidden]="!passwordControl.errors?.required || passwordControl.pristine" class="tc-red-300">{{'common.required' | translate}}</span>
+          </md-hint>
+          <md-hint align="end">{{'user.easyPassword' | translate}}</md-hint>
+        </md-input-container>
+        <md-input-container flex>
+          <input mdInput type="password" name="confirmPassword" required #confirmPassword #confirmPasswordControl="ngModel" [(ngModel)]="user.confirmPassword" placeholder="{{'user.userRegister.confirmPassword' | translate}}">
+          <md-hint align="start">
+            <span [hidden]="!confirmPasswordControl.errors?.required || confirmPasswordControl.pristine" class="tc-red-300">{{'common.required' | translate}}</span>
+          </md-hint>
+          <md-hint align="end">{{'user.userRegister.passwordAgain' | translate}}</md-hint>
+        </md-input-container>
       </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label" for="input-confirm-password">确认密码</label>
-      <div class="col-10">
-        <input type="password" class="form-control" id="input-confirm-password" placeholder="请再输入密码">
+      <div layout="row">
+        <md-input-container flex>
+          <input mdInput name="nick-name" required #nickName #nickNameControl="ngModel" [(ngModel)]="user.nickName" placeholder="{{'user.nickName' | translate}}">
+          <md-hint align="start">
+            <span [hidden]="!nickNameControl.errors?.required || nickNameControl.pristine" class="tc-red-300">{{'common.required' | translate}}</span>
+          </md-hint>
+          <md-hint align="end">{{nickName.value.length}} / 30</md-hint>
+        </md-input-container>
       </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label" for="input-email">邮箱</label>
-      <div class="col-10">
-        <input type="email" class="form-control" id="input-email" placeholder="请输入邮箱">
+      <div layout="row">
+        <md-input-container flex>
+          <input mdInput name="real-name" #realName #realNameControl="ngModel" [(ngModel)]="user.realName" placeholder="{{'user.realName' | translate}}">
+          <md-hint align="end">{{realName.value.length}} / 30</md-hint>
+        </md-input-container>
+        <md-input-container flex>
+          <input mdInput name="en-name" #enName #enNameControl="ngModel" [(ngModel)]="user.enName" placeholder="{{'user.enName' | translate}}">
+          <md-hint align="end">{{enName.value.length}} / 30</md-hint>
+        </md-input-container>
       </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label" for="input-nick-name">昵称</label>
-      <div class="col-10">
-        <input class="form-control" id="input-nick-name" placeholder="请输入昵称">
+      <div layout="row">
+        <md-input-container flex>
+          <input mdInput name="email" #email #emailControl="ngModel" [(ngModel)]="user.email" placeholder="{{'user.email' | translate}}">
+          <md-hint align="end">{{'user.userRegister.emailError' | translate}}</md-hint>
+        </md-input-container>
       </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label" for="input-real-name">真实姓名</label>
-      <div class="col-10">
-        <input class="form-control" id="input-real-name" placeholder="请输入真实姓名">
+      <div layout="row">
+        <md-input-container flex>
+          <input mdInput name="qq" #qq #qqControl="ngModel" [(ngModel)]="user.qq" placeholder="{{'user.qq' | translate}}">
+          <md-hint align="end">{{'user.userRegister.qqError' | translate}}</md-hint>
+        </md-input-container>
+        <md-input-container flex>
+          <input mdInput name="wechat" #wechat #wechatControl="ngModel" [(ngModel)]="user.wechat" placeholder="{{'user.wechat' | translate}}">
+          <md-hint align="end">{{'user.userRegister.wechatError' | translate}}</md-hint>
+        </md-input-container>
       </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label" for="input-en-name">英文名</label>
-      <div class="col-10">
-        <input class="form-control" id="input-en-name" placeholder="请输入英文名">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label" for="input-qq">QQ</label>
-      <div class="col-10">
-        <input class="form-control" id="input-qq" placeholder="请输入QQ">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label" for="input-wechat">微信</label>
-      <div class="col-10">
-        <input class="form-control" id="input-wechat" placeholder="请录入微信">
-      </div>
-    </div>
-    <div class="form-group row">
-      <div class="offset-2 col-10">
-        <button type="submit" class="btn btn-primary">注册</button>
-        <button type="button" class="btn btn-secondary" (click)="cancelRegister()">取消</button>
-      </div>
-    </div>
-  </form>
+    </form>
+  </md-dialog-content>
+  <md-dialog-actions>
+    <button md-raised-button type="submit" color="primary" [disabled]="!registerForm.valid" (click)="doRegister()">{{'user.userRegister.register' | translate}}</button>
+    <button md-raised-button (click)="cancelRegister()">{{'common.cancel' | translate}}</button>
+  </md-dialog-actions>
 </div>
