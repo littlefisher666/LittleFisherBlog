@@ -1,15 +1,9 @@
 <div class="post-tags-container">
-  <div class="card">
-    <div class="card-header">
-      文章标签
-    </div>
-    <div class="card-block">
+  <md-card>
+    <md-card-content>
       <div class="tag-cloud">
-        <a href="#">AOP</a>
-        <a href="#">Activiti</a>
-        <a href="#">Angular2</a>
-        <a href="#">Bean</a>
+        <a href="#" *ngFor="let tag of tagList">{{tag}} </a>
       </div>
-    </div>
-  </div>
+    </md-card-content>
+  </md-card>
 </div>

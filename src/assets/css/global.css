@@ -4,11 +4,15 @@
   text-align: left;
   padding: 0 5px;
 }
-.mat-dialog-content {
-  display: block;
-  margin: 0 -24px 10px -24px;
-  padding: 0 24px;
-  max-height: 65vh;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+
+.mat-input-ripple {
+  background-color: #6f5499;
+}
+
+md-hint[align="end"] {
+  color: #bdbdbd;
+}
+
+md-hint[align="start"] {
+  color: #e53935;
 }

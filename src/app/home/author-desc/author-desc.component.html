@@ -1,23 +1,21 @@
 <div class="author-desc-container">
-  <div class="card">
-    <div class="card-header">
-      博主介绍
-    </div>
-    <div class="card-block text-center">
-      <a class="author-img-a" href="javascript:void(0)">
-        <img src="assets/imgs/avatar.jpg" class="author-img"/>
-      </a>
-      <h3 class="author-name">
-        <a href="javascript:void(0)">LittleFisher</a>
-      </h3>
-      <p class="author-subtitle">让优秀成为一种习惯</p>
-      <hr/>
-      <a href="javascript:void(0)">
-        <p>技术文档</p>
-      </a>
-      <a href="javascript:void(0)">
-        <p>心历路程</p>
-      </a>
-    </div>
-  </div>
+  <md-card>
+    <md-card-content>
+      <div class="text-center">
+        <a class="author-img-a" href="javascript:void(0)">
+          <img src="assets/imgs/avatar.jpg" class="author-img"/>
+        </a>
+        <h3 class="author-name mt-3">
+          <a href="javascript:void(0)">{{authorName}}</a>
+        </h3>
+        <p class="author-subtitle">{{authorSubtitle}}</p>
+        <hr/>
+        <div>
+          <a href="javascript:void(0)" *ngFor="let menu of menuList">
+            <p>{{menu}}</p>
+          </a>
+        </div>
+      </div>
+    </md-card-content>
+  </md-card>
 </div>

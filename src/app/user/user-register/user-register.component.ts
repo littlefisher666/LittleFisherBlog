@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {User} from "../model/user-model";
 import {MdDialogRef} from "@angular/material";
 
 @Component({
-  selector: 'app-user-register',
-  templateUrl: './user-register.component.html',
-  styleUrls: ['./user-register.component.css']
+  selector: "app-user-register",
+  templateUrl: "./user-register.component.html",
+  styleUrls: ["./user-register.component.scss"]
 })
 export class UserRegisterComponent implements OnInit {
 
   public user: User = new User();
 
-  constructor(
-    public activeDialogRef: MdDialogRef<UserRegisterComponent>
-  ) { }
+  constructor(public activeDialogRef: MdDialogRef<UserRegisterComponent>) {
+  }
 
   ngOnInit() {
   }

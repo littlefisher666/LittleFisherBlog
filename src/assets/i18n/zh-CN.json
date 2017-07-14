@@ -22,6 +22,11 @@
       "wechatError": "请输入符合规则的微信账号"
     }
   },
+  "siteStat": {
+    "visitTotal": "访问总数",
+    "postTotal": "文章总数",
+    "commentTotal": "评论总数"
+  },
   "common": {
     "ok": "确定",
     "cancel": "取消",

@@ -1,15 +1,9 @@
 <div class="friends-link-container">
-  <div class="card">
-    <div class="card-header">
-      友情链接
-    </div>
-    <div class="card-block">
-      <a href="javascript:void(0)">
-        <p>aaa的博客</p>
+  <md-card>
+    <md-card-content>
+      <a href="{{friendLink.webUrl}}" target="_blank" *ngFor="let friendLink of friendLinkList">
+        <p>{{friendLink.friendName}}的博客</p>
       </a>
-      <a href="javascript:void(0)">
-        <p>bbb的博客</p>
-      </a>
-    </div>
-  </div>
+    </md-card-content>
+  </md-card>
 </div>

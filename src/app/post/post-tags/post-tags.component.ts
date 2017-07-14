@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostTagsComponent implements OnInit {
 
+  tagList: string[] = ["AOP", "Activiti", "Angular2", "Bean"];
+
   constructor() { }
 
   ngOnInit() {

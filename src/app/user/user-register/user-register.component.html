@@ -1,71 +1,87 @@
 <div class="container">
   <h2 md-dialog-title>{{'user.userRegister.register' | translate}}</h2>
-  <md-dialog-content>
-    <form #registerForm>
+  <md-dialog-content class="register-dialog-content">
+    <form #registerForm="ngForm">
       <div layout="row">
         <md-input-container flex>
-          <input mdInput name="acc-nbr" required #accNbr #accNbrControl="ngModel" [(ngModel)]="user.accNbr" placeholder="{{'user.accNbr' | translate}}" maxlength="30">
+          <input mdInput name="acc-nbr" required #accNbr #accNbrControl="ngModel" [(ngModel)]="user.accNbr"
+                 placeholder="{{'user.accNbr' | translate}}" maxlength="30">
           <md-hint align="start">
-            <span [hidden]="!accNbrControl.errors?.required || accNbrControl.pristine" class="tc-red-300">{{'common.required' | translate}}</span>
+            <span
+              [hidden]="!accNbrControl.errors?.required || accNbrControl.pristine">{{'common.required' | translate}}</span>
           </md-hint>
           <md-hint align="end">{{accNbr.value.length}} / 30</md-hint>
         </md-input-container>
       </div>
       <div layout="row">
         <md-input-container flex>
-          <input mdInput type="password" name="password" required #password #passwordControl="ngModel" [(ngModel)]="user.password" placeholder="{{'common.password' | translate}}">
+          <input mdInput type="password" name="password" required #password #passwordControl="ngModel"
+                 [(ngModel)]="user.password" placeholder="{{'common.password' | translate}}">
           <md-hint align="start">
-            <span [hidden]="!passwordControl.errors?.required || passwordControl.pristine" class="tc-red-300">{{'common.required' | translate}}</span>
+            <span [hidden]="!passwordControl.errors?.required || passwordControl.pristine">{{'common.required' | translate}}</span>
           </md-hint>
           <md-hint align="end">{{'user.easyPassword' | translate}}</md-hint>
         </md-input-container>
         <md-input-container flex>
-          <input mdInput type="password" name="confirmPassword" required #confirmPassword #confirmPasswordControl="ngModel" [(ngModel)]="user.confirmPassword" placeholder="{{'user.userRegister.confirmPassword' | translate}}">
+          <input mdInput type="password" name="confirmPassword" required #confirmPassword
+                 #confirmPasswordControl="ngModel" [(ngModel)]="user.confirmPassword"
+                 placeholder="{{'user.userRegister.confirmPassword' | translate}}">
           <md-hint align="start">
-            <span [hidden]="!confirmPasswordControl.errors?.required || confirmPasswordControl.pristine" class="tc-red-300">{{'common.required' | translate}}</span>
+            <span [hidden]="!confirmPasswordControl.errors?.required || confirmPasswordControl.pristine"
+                  class="tc-red-300">{{'common.required' | translate}}</span>
           </md-hint>
           <md-hint align="end">{{'user.userRegister.passwordAgain' | translate}}</md-hint>
         </md-input-container>
       </div>
       <div layout="row">
         <md-input-container flex>
-          <input mdInput name="nick-name" required #nickName #nickNameControl="ngModel" [(ngModel)]="user.nickName" placeholder="{{'user.nickName' | translate}}">
+          <input mdInput name="nick-name" required #nickName #nickNameControl="ngModel" [(ngModel)]="user.nickName"
+                 placeholder="{{'user.nickName' | translate}}">
           <md-hint align="start">
-            <span [hidden]="!nickNameControl.errors?.required || nickNameControl.pristine" class="tc-red-300">{{'common.required' | translate}}</span>
+            <span [hidden]="!nickNameControl.errors?.required || nickNameControl.pristine">{{'common.required' | translate}}</span>
           </md-hint>
           <md-hint align="end">{{nickName.value.length}} / 30</md-hint>
         </md-input-container>
       </div>
       <div layout="row">
         <md-input-container flex>
-          <input mdInput name="real-name" #realName #realNameControl="ngModel" [(ngModel)]="user.realName" placeholder="{{'user.realName' | translate}}">
+          <input mdInput name="real-name" #realName #realNameControl="ngModel" [(ngModel)]="user.realName"
+                 placeholder="{{'user.realName' | translate}}">
           <md-hint align="end">{{realName.value.length}} / 30</md-hint>
         </md-input-container>
         <md-input-container flex>
-          <input mdInput name="en-name" #enName #enNameControl="ngModel" [(ngModel)]="user.enName" placeholder="{{'user.enName' | translate}}">
+          <input mdInput name="en-name" #enName #enNameControl="ngModel" [(ngModel)]="user.enName"
+                 placeholder="{{'user.enName' | translate}}">
           <md-hint align="end">{{enName.value.length}} / 30</md-hint>
         </md-input-container>
       </div>
       <div layout="row">
         <md-input-container flex>
-          <input mdInput name="email" #email #emailControl="ngModel" [(ngModel)]="user.email" placeholder="{{'user.email' | translate}}">
+          <input mdInput name="email" #email #emailControl="ngModel" [(ngModel)]="user.email"
+                 placeholder="{{'user.email' | translate}}">
           <md-hint align="end">{{'user.userRegister.emailError' | translate}}</md-hint>
         </md-input-container>
       </div>
       <div layout="row">
         <md-input-container flex>
-          <input mdInput name="qq" #qq #qqControl="ngModel" [(ngModel)]="user.qq" placeholder="{{'user.qq' | translate}}">
+          <input mdInput name="qq" #qq #qqControl="ngModel" [(ngModel)]="user.qq"
+                 placeholder="{{'user.qq' | translate}}">
           <md-hint align="end">{{'user.userRegister.qqError' | translate}}</md-hint>
         </md-input-container>
         <md-input-container flex>
-          <input mdInput name="wechat" #wechat #wechatControl="ngModel" [(ngModel)]="user.wechat" placeholder="{{'user.wechat' | translate}}">
+          <input mdInput name="wechat" #wechat #wechatControl="ngModel" [(ngModel)]="user.wechat"
+                 placeholder="{{'user.wechat' | translate}}">
           <md-hint align="end">{{'user.userRegister.wechatError' | translate}}</md-hint>
         </md-input-container>
       </div>
     </form>
   </md-dialog-content>
   <md-dialog-actions>
-    <button md-raised-button type="submit" color="primary" [disabled]="!registerForm.valid" (click)="doRegister()">{{'user.userRegister.register' | translate}}</button>
-    <button md-raised-button (click)="cancelRegister()">{{'common.cancel' | translate}}</button>
+    <div>
+      <button md-raised-button type="submit" color="primary" [disabled]="!registerForm.valid" (click)="doRegister()">
+        {{'user.userRegister.register' | translate}}
+      </button>
+      <button md-raised-button (click)="cancelRegister()">{{'common.cancel' | translate}}</button>
+    </div>
   </md-dialog-actions>
 </div>

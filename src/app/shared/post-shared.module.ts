@@ -1,16 +1,19 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from "@angular/core";
 import {PostTagsComponent} from "../post/post-tags/post-tags.component";
+import {CommonSharedModule} from "./common-shared.module";
+import {MdCardModule} from "@angular/material";
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonSharedModule,
+    MdCardModule
   ],
   declarations: [
-      PostTagsComponent
+    PostTagsComponent
   ],
   exports: [
-      PostTagsComponent
+    PostTagsComponent
   ]
 })
-export class PostSharedModule { }
+export class PostSharedModule {
+}

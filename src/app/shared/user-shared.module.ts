@@ -1,17 +1,14 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from "@angular/core";
 import {UserLoginComponent} from "../user/user-login/user-login.component";
 import {UserRegisterComponent} from "../user/user-register/user-register.component";
 import {CommonSharedModule} from "./common-shared.module";
-import {MdButtonModule, MdCheckboxModule, MdDialogModule, MdInputModule} from "@angular/material";
 import {TranslateModule} from "@ngx-translate/core";
+import {MaterialSharedModule} from "./material-shared.module";
 
 @NgModule({
   imports: [
     CommonSharedModule,
-    MdInputModule,
-    MdCheckboxModule,
-    MdButtonModule,
-    MdDialogModule,
+    MaterialSharedModule,
     TranslateModule
   ],
   declarations: [
@@ -23,4 +20,5 @@ import {TranslateModule} from "@ngx-translate/core";
     UserRegisterComponent
   ]
 })
-export class UserSharedModule { }
+export class UserSharedModule {
+}

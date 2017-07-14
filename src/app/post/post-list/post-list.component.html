@@ -1,51 +1,22 @@
 <div class="post-list-container">
   <div class="row">
-    <div class="col-sm-12">
-      <div class="post-item-container">
+    <div class="col-12">
+      <div class="post-item-container" *ngFor="let post of postList">
         <h4>
-          <a href="#">文章标题1</a>
-        </h4>
-        <p class="text-danger">
-          <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="fa fa-comment" aria-hidden="true"></i>&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;LittleFisher
-          &nbsp;&nbsp;&nbsp;&nbsp;2016-06-15
-        </p>
-      </div>
-      <div class="post-item-container">
-        <h4>
-          <a href="#">文章标题2</a>
+          <a href="#">{{post.title}}</a>
         </h4>
         <p>
-          <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="fa fa-comment" aria-hidden="true"></i>&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;LittleFisher
-          &nbsp;&nbsp;&nbsp;&nbsp;2016-06-15
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;{{post.likedTimes}} &nbsp;&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-comment" aria-hidden="true"></i>&nbsp;{{post.commentTime}} &nbsp;&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;{{post.readTimes}} &nbsp;&nbsp;&nbsp;&nbsp;{{post.author.nickName}}
+          &nbsp;&nbsp;&nbsp;&nbsp;{{post.createdDate}}
         </p>
       </div>
-      <div class="post-item-container">
-        <h4>
-          <a href="#">文章标题3</a>
-        </h4>
-        <p>
-          <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="fa fa-comment" aria-hidden="true"></i>&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;LittleFisher
-          &nbsp;&nbsp;&nbsp;&nbsp;2016-06-15
-        </p>
-      </div>
-      <div class="post-item-container">
-        <h4>
-          <a href="#">文章标题4</a>
-        </h4>
-        <p>
-          <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="fa fa-comment" aria-hidden="true"></i>&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;LittleFisher
-          &nbsp;&nbsp;&nbsp;&nbsp;2016-06-15
-        </p>
-      </div>
-      <!--<pagination [totalItems]="totalItems" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" firstText="{{'firstPage' | translate}}" lastText="{{'lastPage' | translate}}" previousText="{{'previousPage' | translate}}" nextText="{{'nextPage' | translate}}" [boundaryLinks]="true" [rotate]="false" (pageChanged)="pageChanged($event)" class="pagination-sm"></pagination>-->
     </div>
   </div>
 </div>
+<td-paging-bar #pagingBar pageSizeAllText="All" [pageSizeAll]="true" [pageSizes]="[50,100,200,500,1000,2000]" pageLinkCount="5"
+               [initialPage]="1" [firstLast]="firstLast" [pageSize]="100" [total]="1345" (change)="change($event)">
+  <span td-paging-bar-label hide-xs>Row per page:</span>
+  {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+</td-paging-bar>
