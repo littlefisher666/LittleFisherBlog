@@ -1,28 +1,34 @@
-# LittleFisherBlog
+## LittleFisherBlog
+博客的前端内容，使用`Angular`技术栈进行开发
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
+#### 后端环境
+本项目为前端环境，后端环境请移步如下地址
+[https://github.com/litttlefisher/littlefisher-system][1]
 
-## Development server
+#### 环境搭建
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##### 1. 安装`Git`，傻瓜式安装，不详细描述
+##### 2. 安装`NodeJS`，傻瓜式安装，不详细描述
+##### 3. 在工程目录下调用控制台命令，输入`git clone https://github.com/litttlefisher/LittleFisherBlog.git`，克隆项目文件
+##### 4. 进入工程目录，依次调用如下命令，即可启动项目
 
-## Code scaffolding
+```
+npm i -g cnpm
+cnpm i -g @angular/cli
+cnpm install
+ng serve
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+##### 5. 打开浏览器访问[http://localhost:4200/][2]
+##### 6. 如果你想让加载的包更小，请使用以下方式启动`angular-cli`内置的轻量级`http server`
+```
+ng serve --prod --aot
+```
+##### 7. 如果想让局域网内其他`PC`访问本机页面，请查找局域网内本机`ip`地址，然后执行如下命令来启动，把`{ip}`替换为本机实际`ip`地址
+```
+ng serve --host={ip}
+```
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  [1]: https://github.com/litttlefisher/littlefisher-system
+  [2]: http://localhost:4200/
