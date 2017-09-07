@@ -1,19 +1,17 @@
-.logo {
-    width: 120px;
-    height: 31px;
-    background: #333;
-    border-radius: 6px;
-    margin: 16px 24px 16px 0;
-    float: left;
+.home-container {
+    height: 100%;
+    .left-col {
+        background: #fff;
+        width: 300px;
+        position: fixed;
+        // opacity: 1;
+        -webkit-transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-in;
+        -ms-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+        height: 100%;
+        .lf-left-col {
+            position: absolute;
+        }
+    }
 }
-
-// .footer {
-//     text-align: left;
-//     padding: 30px 48px;
-//     background: #263238;
-//     color: #fff;
-//     //position: absolute;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//   }
